@@ -24,8 +24,3 @@ pipeline {
   }
 }
 
-
-
-
-ruby: error while loading shared libraries: libruby.so.2.7: cannot open shared object file: No such file or directory
-https://github.com/ytti/oxidized/issues/1885
