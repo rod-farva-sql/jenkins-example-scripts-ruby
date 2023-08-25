@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('version') {
       steps {
-         sh 'source /opt/rh/rh-ruby27/enable'
+         sh '/etc/profile.d/rh-ruby27.sh'
          sh '/opt/rh/rh-ruby27/root/usr/bin/ruby -v'
       }
     }
