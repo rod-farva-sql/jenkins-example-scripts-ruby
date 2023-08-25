@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('version') {
       steps {
-         sh 'ruby -v'
+         sh '/opt/rh/rh-ruby27/root/usr/bin/ruby -v'
       }
     }
     stage('hello') {
