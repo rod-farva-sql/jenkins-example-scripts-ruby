@@ -11,5 +11,10 @@ pipeline {
         sh 'ruby Hello.rb'
       }
     }
+    stage('version') {
+      steps {
+        sh 'which ruby'
+      }
+    }
   }
 }
