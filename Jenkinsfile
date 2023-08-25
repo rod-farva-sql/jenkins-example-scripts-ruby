@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('version') {
       steps {
-        sh '/etc/profile.d/rh-ruby27.sh'
-        sh 'ruby --version'
+         sh '/opt/rh/rh-ruby27/root/usr/bin/ruby --version'
       }
     }
     stage('hello') {
