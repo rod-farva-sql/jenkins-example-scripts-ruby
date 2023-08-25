@@ -1,10 +1,19 @@
+node {
+    // Define the desired Ruby path
+    def rubyPath = "/opt/rh/rh-ruby27/root/usr/bin"
+
+    // Inject environment variables
+    wrap([$class: 'EnvInjectBuildWrapper', 
+          // Adding the Ruby path to the existing PATH
+          buildEnvVars: [PATH+':'+rubyPath]]) {
+              
+
 pipeline {
   agent any
   stages {
     stage('version') {
       steps {
-         sh '/etc/profile.d/rh-ruby27.sh'
-         sh '/opt/rh/rh-ruby27/root/usr/bin/ruby -v'
+         sh 'ruby -v'
       }
     }
     stage('hello') {
@@ -18,4 +27,7 @@ pipeline {
       }
     }
   }
+}
+
+    }
 }
