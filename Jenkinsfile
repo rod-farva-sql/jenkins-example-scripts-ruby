@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('version') {
       steps {
+        sh '/etc/profile.d/rh-ruby27.sh'
         sh 'ruby --version'
       }
     }
