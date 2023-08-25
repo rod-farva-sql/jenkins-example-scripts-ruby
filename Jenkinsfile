@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('version') {
       steps {
-         source /etc/profile
+         source '/etc/profile'
          sh 'echo $PATH'
       }
     }
