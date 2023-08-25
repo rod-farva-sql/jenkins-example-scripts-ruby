@@ -9,7 +9,7 @@ pipeline {
     }
     stage('hello') {
       steps {
-        sh 'ruby Hello.rb'
+        sh '/opt/rh/rh-ruby27/root/usr/bin/ruby Hello.rb'
       }
     }
     stage('which') {
