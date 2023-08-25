@@ -13,7 +13,7 @@ pipeline {
     }
     stage('which') {
       steps {
-        sh 'which ruby'
+        sh 'which -a ruby'
       }
     }
   }
