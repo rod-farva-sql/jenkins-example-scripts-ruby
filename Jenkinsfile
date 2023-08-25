@@ -1,15 +1,19 @@
 pipeline {
   agent any
+
+  environment {
+    PATH = "/opt/rh/rh-ruby27/root/usr/local/bin:/opt/rh/rh-ruby27/root/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/centos/.local/bin:/home/centos/bin"
+  }
       
   stages {
     stage('version') {
       steps {
-         sh '/opt/rh/rh-ruby27/root/usr/bin/ruby -v'
+         sh 'ruby -v'
       }
     }
     stage('hello') {
       steps {
-        sh '/opt/rh/rh-ruby27/root/usr/bin/ruby Hello.rb'
+        sh 'ruby Hello.rb'
       }
     }
     stage('which') {
@@ -21,3 +25,7 @@ pipeline {
 }
 
 
+
+
+ruby: error while loading shared libraries: libruby.so.2.7: cannot open shared object file: No such file or directory
+https://github.com/ytti/oxidized/issues/1885
